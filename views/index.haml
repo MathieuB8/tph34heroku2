@@ -1,0 +1,18 @@
+!!!
+%html
+  %body
+  %nav.text-center
+    -  @articles.each do |article|
+      %h1= article.title
+      %p= article.body
+
+    - if @pages > 1
+      %a{href:"/?page=#{@pages-1}"} Page précedente 
+      |
+    - if @pages < 3
+      %a{href:"/?page=#{@pages+1}"} Page suivante
+  
+    %p --------------------------------
+    %strong
+      %p="Le nombre d'articles total du blog est de " + @nbr_art.to_s
+    Blog réalisé par Masamune hype hype hype
