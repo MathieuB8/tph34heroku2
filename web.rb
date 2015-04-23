@@ -1,7 +1,7 @@
+require "bundler/setup"
 require 'rubygems'
 require 'sinatra'
 require 'haml'
-require "bundler/setup"
 
 class Article
 	attr_accessor :title,:body
@@ -66,7 +66,7 @@ end
 #end
 
 get '/' do
-
+  @testz = "osef"
   @nbr_art = Dir["public/articles/*"].length/2
   if params['yolo']
 	if params['yolo'].to_i > 8
